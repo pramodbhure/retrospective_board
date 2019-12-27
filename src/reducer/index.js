@@ -5,7 +5,7 @@ const initialState = {
       'highlight':false,
       'what_went_well': ['All tickets done in the first sprint.', 'Good communications between team members'],
       'what_improve': ['Need to work on coding knowledge'],
-      'next_steps':['Start working on second sprint planning']
+      'sprint_action': ['']
   }]
 }
 const reducer = (state = initialState, action) => {
