@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addRetro, onHandleChange, addImprove, onImproveChange, saveImproveCard, showEditOption } from "../actions";
 import {ADD_RETRO, ON_HANDLE_CHANGE} from "../actionTypes";
+import  "./RetroSection.css";
 
 class RetroSection extends Component {
   constructor(){

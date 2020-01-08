@@ -23,6 +23,16 @@ const reducer = (state = initialState, action) => {
       const impCardsArray = state.improveCardsObj;
       impCardsArray.push({'card':action.payload, 'showEdit': false});
       return {...state, improveCardsObj: impCardsArray, whatImproveText: ''}
+      
+    case "ADD_POSITIVE_RETRO":
+      const impCardsArray = state.positiveCardsObj;
+      impCardsArray.push({'card':action.payload, 'showEdit': false});
+      return {...state, positiveCardsObj: impCardsArray, whatPositiveText: ''}
+
+    case "ADD_TODO_RETRO":
+        const impCardsArray = state.toDoCardsObj;
+        impCardsArray.push({'card':action.payload, 'showEdit': false});
+        return {...state, toDoCardsObj: impCardsArray, whatToDoText: ''}
 
     case "ON_HANDLE_CHANGE":
       return {...state, textValue: action.payload}
@@ -30,11 +40,29 @@ const reducer = (state = initialState, action) => {
     case "ON_IMPROVE_CHANGE":
       return {...state, whatImproveText: action.payload}
 
+      case "ON_POSITIVE_CHANGE":
+        return {...state, whatPositiveText: action.payload}
+
+        case "ON_TODO_CHANGE":
+          return {...state, whatToDoText: action.payload}
+
     case "ON_SAVE_IMPROVE_CARD":
       const imprArray = state.improveCardsObj;
       imprArray[action.indexNumber].card = action.newValue;
       imprArray[action.indexNumber].showEdit = false;
       return {...state, improveCardsObj: imprArray, objChanged: false}
+
+      case "ON_SAVE_POSITIVE_CARD":
+        const imprArray = state.positiveCardsObj;
+        imprArray[action.indexNumber].card = action.newValue;
+        imprArray[action.indexNumber].showEdit = false;
+        return {...state, positiveCardsObj: imprArray, objChanged: false}
+
+        case "ON_SAVE_TODO_CARD":
+        const imprArray = state.toDoCardsObj;
+        imprArray[action.indexNumber].card = action.newValue;
+        imprArray[action.indexNumber].showEdit = false;
+        return {...state, positiveCardsObj: imprArray, objChanged: false}
 
     case "ON_SHOW_EDIT_CARD":
       console.log("action.indexNumber: ", action.indexNumber);
