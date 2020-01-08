@@ -16,6 +16,9 @@ import {
 } from "../actions";
 import { ADD_RETRO, ON_HANDLE_CHANGE } from "../actionTypes";
 
+
+
+
 class RetroSection extends Component {
   constructor() {
     super();
@@ -109,7 +112,7 @@ class RetroSection extends Component {
              <a href="#">
           <div
             id={index}
-            className=""
+            className="card-text-height"
             key={index}
             onDoubleClick={() => this.props.showEditOption(index)}
           >
@@ -143,9 +146,11 @@ class RetroSection extends Component {
         const card = this.props.positiveCardsObj[index];
         console.log("card: ", card);
         return (
+          <li>
+          <a href="#">
           <div
             id={index}
-            className="card"
+            className="card-text-height"
             key={index}
             onDoubleClick={() => this.props.showEditOption(index)}
           >
@@ -167,6 +172,7 @@ class RetroSection extends Component {
               <div>{card.card}</div>
             )}
           </div>
+          </a></li>
         );
       });
     }
@@ -177,9 +183,11 @@ class RetroSection extends Component {
         const card = this.props.toDoCardsObj[index];
         console.log("card: ", card);
         return (
+          <li>
+          <a href="#">
           <div
             id={index}
-            className="card"
+            className="card-text-height"
             key={index}
             onDoubleClick={() => this.props.showEditOption(index)}
           >
@@ -201,6 +209,7 @@ class RetroSection extends Component {
               <div>{card.card}</div>
             )}
           </div>
+          </a></li>
         );
       });
     }

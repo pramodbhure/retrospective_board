@@ -9,6 +9,7 @@ import {createStore} from 'redux';
 import { Provider } from 'react-redux';
 import Reducer from './reducer';
 
+
 const store = createStore(Reducer);
 
 function App() {
